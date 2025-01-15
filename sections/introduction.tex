@@ -1,0 +1,47 @@
+\section{Introduction}
+%-------------------------------------------------------------------------------------------
+% Intro
+
+This paper covers the development of A*, Dijkstra and D* lite for path planning using grid maps in both known and unknown environments.
+
+%-------------------------------------------------------------------------------------------
+% Compare use cases of the algorithms
+
+% Dijkstra
+Dijkstra is a commonly used algorithm to solve the shortest path problem\:\cite{rachmawati_analysis_2020}. Dijkstra finds the shortest path and has often been used for routing\:\cite{rachmawati_analysis_2020}.
+% A*
+If the use case demands more speed rather than optimality or completeness, then these can be sacrificed to gain speed by the use of a heuristic, as is the case for A*\:\cite{rachmawati_analysis_2020}.
+A* has been used for path planing problems successfully, and it is a top choice for applications where the computation time must be fast and complexity is an issue\:\cite{foead_systematic_2021}.
+A* generally performs better than Dijkstra when fixed start and end points are given\:\cite{bhateja_performance_2021}.
+Both Dijkstra and A* are mainly concerned with single robot path planing, not multi robot path planing\:\cite{ogata_generic_2020}\cite{foead_systematic_2021}.
+% D* lite
+D* lite is used for path planning in unknown environments\:\cite{koenig_dlite_2002}.
+
+%-------------------------------------------------------------------------------------------
+% Compare advantages of the algorithms
+
+% Dijkstra
+Dijkstra's main advantage is that it always finds the shortest path\:\cite{ogata_generic_2020}.
+% A*
+A* is more efficient, in terms of speed and resources, than Dijkstra and most other algorithms\:\cite{patel_comparative_2021}\:\cite{foead_systematic_2021}. It is faster than Dijkstra because of its use of a heuristic which makes it look only in the direction of the goal rather than looking in all directions, this also results in fewer operations (look ups, pushes and pulls to lists, etc)\:\cite{rachmawati_analysis_2020}\cite{bhateja_performance_2021}. A* performs very well in known environments where there is information available for the heuristic, but it suffers in inaccurate and unknown environments\:\cite{foead_systematic_2021}. A* is also very capable of being customized to meet a wide variety of specialized applications\:\cite{foead_systematic_2021}.
+% D* lite
+D* lite is substantially faster and requires fewer expansions, accesses and is more efficient in unknown environments, compared to repeatedly applying A* each time new obstacle information is obtained\:\cite{koenig_dlite_2002}.
+The code for D* lite is also simple and easy to analyze\:\cite{koenig_dlite_2002}.
+
+%-------------------------------------------------------------------------------------------
+% Compare Disadvantages of the algorithsm
+
+% A*
+A* has the disadvantage of not scaling well with large maps when the number of nodes grow, in this case execution time, overhead and memory usage limits the algorithm\:\cite{patel_comparative_2021}\cite{foead_systematic_2021}. Another disadvantage of A* is that it is not guaranteed to always provide the shortest path (especially if h is not admissible)\:\cite{ogata_generic_2020}\cite{foead_systematic_2021}, a sacrifice made to achieve its speed\:\cite{bhateja_performance_2021}. A* also suffers in bidirectional searches\:\cite{foead_systematic_2021}.
+
+%-------------------------------------------------------------------------------------------
+% Implementation
+
+% A*
+
+% Dijkstra
+Dijkstra was implemented using the A* algorithm and just setting the heuristic to $h = 0$\:\cite{siciliano_robotics_2009}\cite{ogata_generic_2020}.
+
+All code developed is open source under the MIT license and is available on \href{https://github.com/MobileLabs408/task_3}{Github}\footnote{https://github.com/MobileLabs408/task\_3}.
+
+%-------------------------------------------------------------------------------------------

@@ -1,0 +1,12 @@
+\section{Discussion}
+%-------------------------------------------------------------------------------------------
+% A small discussion on the result
+
+% A*
+The results indicate that A* is the most efficient algorithm in small static environments, but the overhead clearly limits the algorithm in large environments where the algorithm approaches Dijkstra's efficiency. A* is the most efficient in terms of execution time in dynamic environments of all sizes, a surprising result given that it has poor execution time in large static environments.
+% Dijkstra
+Dijkstra performs the worst in all test scenarios (except execution time in largest map in unknown environments), clearly showing its inefficiency compared to the other algorithms. The paths produced by Dijkstra in dynamic environments is also very non optimal. Dijkstra mainly performs poorly in terms of pushes and pops, always searching substantially larger spaces than both A* and D* lite. 
+% D* lite
+D* lite has very favorable results in larger environments, especially dynamic, when it comes to pushes and pops. The poor execution time could be the result of the implementation not being optimized. The results also show that D* lite finds more optimized paths in dynamic environments, compared to A* and Dijkstra.
+
+%-------------------------------------------------------------------------------------------
